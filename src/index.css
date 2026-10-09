@@ -105,3 +105,55 @@
 .animate-pulse-subtle {
   animation: pulse-subtle 3s ease-in-out infinite;
 }
+
+/* Strict Single-Page Print Optimization */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm 8mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    font-size: 10px !important;
+  }
+
+  /* Hide entire portfolio page chrome and floating elements */
+  header,
+  main,
+  footer,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  #resume-printable-doc {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  #resume-printable-doc * {
+    color: #000000 !important;
+  }
+
+  #resume-printable-doc a {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+  }
+}
