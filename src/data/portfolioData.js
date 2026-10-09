@@ -192,6 +192,7 @@ export const projectsData = [
     ],
     tech: ["Python", "FastAPI", "LangChain", "RAG", "Qdrant", "LLMs", "Vector Embeddings", "AI Agents"],
     github: "https://github.com/Anurag812000",
+    image: "/assets/images/rag_ai_agent.jpg",
     architecture: [
       "Document Ingestion & Chunking",
       "Vector Embedding Generation",
@@ -202,34 +203,13 @@ export const projectsData = [
     ]
   },
   {
-    id: "varaha-iot-dashboard",
-    title: "Varaha IoT Real-Time Telemetry Dashboard",
-    period: "2026",
-    category: "IoT & Full Stack",
-    featured: true,
-    subtitle: "High-Frequency MQTT Telemetry Engine for Industrial Monitoring",
-    description:
-      "End-to-end industrial telemetry monitoring solution built with MQTT protocol, Node.js backend, PostgreSQL, and a reactive TypeScript dashboard. Streams live sensor telemetry including motor RPM, current, tank levels, and device status with automated fault simulation.",
-    metrics: [
-      { label: "Protocol", val: "MQTT" },
-      { label: "DB", val: "PostgreSQL" },
-      { label: "Frontend", val: "React + TS" }
-    ],
-    points: [
-      "Streamlined real-time data ingestion using MQTT brokers with guaranteed QoS.",
-      "Rendered live telemetry gauges for motor health, RPM, current draw, and cleanliness index.",
-      "Implemented automated simulation routines to stress-test data ingestion pipelines and threshold alerts."
-    ],
-    tech: ["MQTT", "Node.js", "PostgreSQL", "React", "TypeScript", "Real-Time Telemetry"],
-    github: "https://github.com/Anurag812000"
-  },
-  {
     id: "yolov8-robotic-vision",
     title: "YOLOv8 Robotic Vision & Instance Segmentation",
     period: "2026",
     category: "Computer Vision",
     featured: true,
     subtitle: "Custom-Annotated Industrial Computer Vision Pipeline",
+    image: "/assets/images/yolov8_robotic_vision.jpg",
     description:
       "High-precision computer vision pipeline using Ultralytics YOLOv8-nano and OpenCV. Built with 1,368 polygon annotations to deliver millisecond-level instance segmentation and detection on embedded and robotic platforms.",
     metrics: [
@@ -246,12 +226,36 @@ export const projectsData = [
     github: "https://github.com/Anurag812000"
   },
   {
+    id: "varaha-iot-dashboard",
+    title: "Varaha IoT Real-Time Telemetry Dashboard",
+    period: "2026",
+    category: "IoT & Full Stack",
+    featured: true,
+    subtitle: "High-Frequency MQTT Telemetry Engine for Industrial Monitoring",
+    image: "/assets/images/varaha_iot_telemetry.jpg",
+    description:
+      "End-to-end industrial telemetry monitoring solution built with MQTT protocol, Node.js backend, PostgreSQL, and a reactive TypeScript dashboard. Streams live sensor telemetry including motor RPM, current, tank levels, and device status with automated fault simulation.",
+    metrics: [
+      { label: "Protocol", val: "MQTT" },
+      { label: "DB", val: "PostgreSQL" },
+      { label: "Frontend", val: "React + TS" }
+    ],
+    points: [
+      "Streamlined real-time data ingestion using MQTT brokers with guaranteed QoS.",
+      "Rendered live telemetry gauges for motor health, RPM, current draw, and cleanliness index.",
+      "Implemented automated simulation routines to stress-test data ingestion pipelines and threshold alerts."
+    ],
+    tech: ["MQTT", "Node.js", "PostgreSQL", "React", "TypeScript", "Real-Time Telemetry"],
+    github: "https://github.com/Anurag812000"
+  },
+  {
     id: "plant-disease-detection",
     title: "Plant Disease Detection & ML REST Microservice",
     period: "2023",
     category: "Computer Vision",
     featured: false,
     subtitle: "Deep Learning CNN Microservice for Agricultural Diagnosis",
+    image: "/assets/images/smart_grid_xai.jpg",
     description:
       "Convolutional Neural Network (CNN) pipeline trained on leaf imagery to accurately diagnose plant pathologies in real-time, served via FastAPI microservices for deployment on edge and mobile applications.",
     metrics: [

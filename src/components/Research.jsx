@@ -53,9 +53,25 @@ export default function Research() {
                 </div>
 
                 {/* Paper Title */}
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-3 leading-snug group-hover:text-zinc-100 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-3 leading-snug group-hover:text-cyan-200 transition-colors">
                   {item.title}
                 </h3>
+
+                {/* Paper Visual Architecture Banner */}
+                {item.id === 'smart-grid-xgboost' && (
+                  <div className="relative w-full h-36 rounded-lg overflow-hidden mb-4 border border-zinc-800/80 group">
+                    <img
+                      src="/assets/images/smart_grid_xai.jpg"
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent flex items-end p-2.5">
+                      <span className="text-[10px] font-mono text-cyan-300 bg-zinc-950/90 px-2 py-0.5 rounded border border-zinc-800">
+                        Temporal TreeSHAP • 168-Hour Peak Demand Stress Window
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Abstract / Summary */}
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-5 font-normal">

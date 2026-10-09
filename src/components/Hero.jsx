@@ -50,11 +50,11 @@ export default function Hero({ onOpenResume }) {
   };
 
   return (
-    <section id="about" className="pt-28 pb-16 md:pt-36 md:pb-24 border-b border-zinc-800/80 relative overflow-hidden bg-tech-grid">
+    <section id="about" className="pt-28 pb-16 md:pt-36 md:pb-24 border-b border-zinc-800/80 relative overflow-hidden bg-tech-grid radial-hero-glow">
       
       {/* Subtle ambient lighting */}
-      <div className="absolute top-1/4 left-1/12 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-1/12 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/12 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-1/12 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         
@@ -63,22 +63,30 @@ export default function Hero({ onOpenResume }) {
           {/* LEFT COLUMN: Identity & Credentials (7 cols) */}
           <div className="lg:col-span-7">
             
-            {/* Live Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 mb-6 backdrop-blur-sm shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-zinc-200 font-medium">Available for AI & Robotics Roles</span>
-              <span className="text-zinc-600">•</span>
-              <span className="text-zinc-400">IIIT Naya Raipur</span>
+            {/* Top Identity Avatar & Live Availability Badge */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-500 to-cyan-400 p-[1.5px] shadow-lg shadow-cyan-500/20">
+                <div className="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center font-mono font-bold text-xs text-white">
+                  AS
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 backdrop-blur-sm shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-zinc-200 font-medium">Available for AI & Robotics Roles</span>
+                <span className="text-zinc-600">•</span>
+                <span className="text-zinc-400">IIIT Naya Raipur</span>
+              </div>
             </div>
 
             {/* Name Heading */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-400 tracking-tight mb-4 leading-tight">
               {personalData.name}
             </h1>
 
             {/* Role & Specialization */}
             <p className="text-lg sm:text-xl text-zinc-200 font-medium mb-4 leading-snug">
-              AI & Machine Learning Engineer specializing in <span className="text-white underline decoration-zinc-700 underline-offset-4">Computer Vision</span>, <span className="text-white underline decoration-zinc-700 underline-offset-4">RAG Agents</span>, and <span className="text-white underline decoration-zinc-700 underline-offset-4">Explainable AI</span>.
+              AI & Machine Learning Engineer specializing in <span className="text-white underline decoration-cyan-500/40 underline-offset-4">Computer Vision</span>, <span className="text-white underline decoration-indigo-500/40 underline-offset-4">RAG Agents</span>, and <span className="text-white underline decoration-emerald-500/40 underline-offset-4">Explainable AI</span>.
             </p>
 
             {/* High-Impact Bio */}
@@ -87,7 +95,7 @@ export default function Hero({ onOpenResume }) {
             </p>
 
             {/* Metrics Callout Strip */}
-            <div className="grid grid-cols-3 gap-3 mb-7 max-w-lg p-3 rounded-xl bg-zinc-900/60 border border-zinc-800/80 backdrop-blur-sm font-mono">
+            <div className="grid grid-cols-3 gap-3 mb-7 max-w-lg p-3 rounded-xl bg-zinc-900/70 border border-zinc-800/80 backdrop-blur-md font-mono shadow-md">
               <div>
                 <div className="text-[10px] text-zinc-400 uppercase tracking-wider">Vision Detection</div>
                 <div className="text-base sm:text-lg font-bold text-white mt-0.5">0.84 mAP50</div>
@@ -109,7 +117,7 @@ export default function Hero({ onOpenResume }) {
             <div className="flex flex-wrap items-center gap-3 mb-8">
               <button
                 onClick={onOpenResume}
-                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-semibold text-xs transition-colors shadow-sm"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 font-semibold text-xs transition-colors shadow-md hover:shadow-lg"
               >
                 <FileText className="w-4 h-4 text-zinc-950" />
                 <span>View Official Resume</span>
@@ -117,7 +125,7 @@ export default function Hero({ onOpenResume }) {
 
               <a
                 href="#demo-lab"
-                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 text-xs font-medium transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-cyan-500/40 text-xs font-medium transition-colors shadow-sm"
               >
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Interactive Architecture Lab</span>
@@ -243,6 +251,23 @@ export default function Hero({ onOpenResume }) {
                         </div>
                         <div className="text-[10px] text-zinc-400">
                           bbox: [220, 310, 290, 395] | polygon: 24 vertices
+                        </div>
+                      </div>
+
+                      {/* Live Camera Feed Snapshot */}
+                      <div className="relative rounded-lg overflow-hidden border border-zinc-800 h-24 bg-black group mt-2">
+                        <img
+                          src="/assets/images/yolov8_robotic_vision.jpg"
+                          alt="Jetson Camera Stream"
+                          className="w-full h-full object-cover opacity-75 group-hover:opacity-90 transition-opacity"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 flex items-end justify-between p-2">
+                          <span className="text-[9px] text-cyan-300 bg-zinc-950/90 px-1.5 py-0.5 rounded border border-zinc-800">
+                            CAM_FEED: 640x640 • TensorRT
+                          </span>
+                          <span className="text-[9px] text-emerald-400 font-bold bg-zinc-950/90 px-1.5 py-0.5 rounded border border-zinc-800">
+                            71.4 FPS LIVE
+                          </span>
                         </div>
                       </div>
                     </div>

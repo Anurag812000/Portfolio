@@ -222,7 +222,7 @@ export default function InteractiveLab() {
                       {ragQueries[selectedRagIdx].answer}
                     </div>
 
-                    <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
+                    <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400 mb-3">
                       <span>Citations:</span>
                       <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
                         [Chunk 1]
@@ -230,6 +230,20 @@ export default function InteractiveLab() {
                       <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
                         [Chunk 2]
                       </span>
+                    </div>
+
+                    {/* Architecture Graphic Visualizer Thumbnail */}
+                    <div className="rounded-lg overflow-hidden border border-zinc-800/80 relative group">
+                      <img
+                        src="/assets/images/rag_ai_agent.jpg"
+                        alt="RAG Vector Architecture"
+                        className="w-full h-36 object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent flex items-end p-2.5">
+                        <span className="text-[10px] font-mono text-cyan-300 bg-zinc-900/90 px-2 py-0.5 rounded border border-zinc-700">
+                          Qdrant 1536-d Vector Cluster & Citation Graph
+                        </span>
+                      </div>
                     </div>
                   </div>
 
@@ -331,24 +345,35 @@ export default function InteractiveLab() {
                   </span>
                 </div>
 
-                {/* Viewport Box */}
-                <div className="relative w-full h-64 bg-zinc-900/90 rounded-lg border border-zinc-800 flex items-center justify-center overflow-hidden">
+                {/* Viewport Box with Real YOLOv8 Robotic Vision Feed */}
+                <div className="relative w-full h-80 sm:h-[400px] rounded-lg border border-zinc-800 flex items-center justify-center overflow-hidden bg-black">
+                  {/* Real Industrial Robotic Arm Vision Feed Background */}
+                  <img
+                    src="/assets/images/yolov8_robotic_vision.jpg"
+                    alt="YOLOv8 Robotic Vision Feed"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none" />
+
                   {/* Subtle Grid in Camera */}
-                  <div className="absolute inset-0 bg-tech-grid opacity-30"></div>
+                  <div className="absolute inset-0 bg-tech-grid opacity-25 pointer-events-none"></div>
                   
                   {/* Crosshair Center */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                    <div className="w-8 h-px bg-white"></div>
-                    <div className="h-8 w-px bg-white"></div>
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
+                    <div className="w-16 h-px bg-cyan-400"></div>
+                    <div className="h-16 w-px bg-cyan-400"></div>
                   </div>
+
+                  {/* Laser Scan Line Micro Animation */}
+                  <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent pointer-events-none animate-pulse-subtle top-1/2 -translate-y-1/2"></div>
 
                   {/* Simulated Objects with confidence filtering */}
                   {[
-                    { id: 'box1', name: 'robotic_manipulator', conf: 0.94, top: '20%', left: '15%', width: '35%', height: '55%', color: 'border-purple-400 bg-purple-500/10 text-purple-300' },
-                    { id: 'box2', name: 'workpiece_casing', conf: 0.88, top: '45%', left: '55%', width: '25%', height: '35%', color: 'border-cyan-400 bg-cyan-500/10 text-cyan-300' },
-                    { id: 'box3', name: 'safety_boundary', conf: 0.78, top: '75%', left: '10%', width: '75%', height: '18%', color: 'border-amber-400 bg-amber-500/10 text-amber-300' },
-                    { id: 'box4', name: 'end_effector_grip', conf: 0.62, top: '15%', left: '60%', width: '22%', height: '24%', color: 'border-emerald-400 bg-emerald-500/10 text-emerald-300' },
-                    { id: 'box5', name: 'micro_defect_scratch', conf: 0.38, top: '55%', left: '62%', width: '12%', height: '14%', color: 'border-rose-400 bg-rose-500/10 text-rose-300' }
+                    { id: 'box1', name: 'ARM_SEGMENT [RB12]', conf: 0.94, top: '22%', left: '32%', width: '30%', height: '52%', color: 'border-cyan-400/90 bg-cyan-500/15 text-cyan-200 shadow-[0_0_15px_rgba(6,182,212,0.3)]' },
+                    { id: 'box2', name: 'END_EFFECTOR [EE-5]', conf: 0.88, top: '26%', left: '60%', width: '16%', height: '32%', color: 'border-fuchsia-400/90 bg-fuchsia-500/15 text-fuchsia-200 shadow-[0_0_15px_rgba(217,70,239,0.3)]' },
+                    { id: 'box3', name: 'JOINT_2 [JT-7]', conf: 0.81, top: '48%', left: '20%', width: '18%', height: '38%', color: 'border-purple-400/90 bg-purple-500/15 text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.3)]' },
+                    { id: 'box4', name: 'CONVEYOR_GUIDE', conf: 0.68, top: '70%', left: '42%', width: '45%', height: '22%', color: 'border-amber-400/90 bg-amber-500/15 text-amber-200 shadow-[0_0_15px_rgba(251,191,36,0.2)]' },
+                    { id: 'box5', name: 'GEARING_DEFECT', conf: 0.42, top: '65%', left: '25%', width: '10%', height: '14%', color: 'border-rose-400/90 bg-rose-500/15 text-rose-200' }
                   ].map((obj) => {
                     const isVisible = obj.conf >= confidenceThreshold;
                     if (!isVisible) return null;
@@ -356,19 +381,23 @@ export default function InteractiveLab() {
                     return (
                       <div
                         key={obj.id}
-                        className={`absolute border-2 rounded transition-all duration-200 ${obj.color} flex flex-col justify-start p-1`}
+                        className={`absolute border-2 rounded transition-all duration-300 ${obj.color} flex flex-col justify-start p-1.5 backdrop-blur-[1px]`}
                         style={{ top: obj.top, left: obj.left, width: obj.width, height: obj.height }}
                       >
-                        <div className="bg-zinc-950/90 px-1.5 py-0.5 rounded text-[10px] font-bold self-start border border-zinc-700/80 leading-none">
-                          {obj.name} <span className="text-emerald-400">{obj.conf}</span>
+                        <div className="bg-zinc-950/95 px-1.5 py-0.5 rounded text-[10px] font-bold self-start border border-zinc-700/80 leading-none shadow-md">
+                          {obj.name} <span className="text-emerald-400 font-mono">conf: {obj.conf}</span>
                         </div>
                       </div>
                     );
                   })}
 
                   {/* Overlay Watermark info */}
-                  <div className="absolute bottom-2 left-2 text-[10px] text-zinc-400 bg-zinc-950/80 px-2 py-1 rounded border border-zinc-800">
-                    Live Threshold: {(confidenceThreshold * 100).toFixed(0)}% • IoU: 0.50
+                  <div className="absolute bottom-3 left-3 text-[10px] text-zinc-300 bg-zinc-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-zinc-800 flex items-center gap-3">
+                    <span>IoU: 0.50</span>
+                    <span className="text-zinc-600">•</span>
+                    <span>Confidence: {(confidenceThreshold * 100).toFixed(0)}%</span>
+                    <span className="text-zinc-600">•</span>
+                    <span className="text-emerald-400">1,368 Polygon Masks</span>
                   </div>
                 </div>
 
@@ -435,41 +464,70 @@ export default function InteractiveLab() {
                 </div>
               </div>
 
-              {/* Visual Bar Chart of Top Features */}
-              <div className="space-y-3 font-mono text-xs">
-                <span className="text-zinc-400 block text-[11px] uppercase tracking-wider">
-                  Top Feature Attributions (|SHAP Value|):
-                </span>
-
-                {(shapRegime === 'peak' ? [
-                  { name: "Lag_24h_Grid_Load", value: 0.442, pct: "88%", desc: "Previous day baseline demand" },
-                  { name: "Surge_Ratio_Derivative", value: 0.321, pct: "64%", desc: "Sudden rate of consumption spike" },
-                  { name: "Cyclic_Sin_Hour_Encoding", value: 0.235, pct: "47%", desc: "Circadian grid load periodicity" },
-                  { name: "Rolling_Std_12h", value: 0.168, pct: "34%", desc: "Variance during stress window" },
-                  { name: "Temperature_Gradient", value: 0.098, pct: "20%", desc: "Cooling & heating correlation" }
-                ] : [
-                  { name: "Cyclic_Sin_Hour_Encoding", value: 0.395, pct: "79%", desc: "Diurnal cyclical demand pattern" },
-                  { name: "Lag_24h_Grid_Load", value: 0.362, pct: "72%", desc: "24-hour autoregressive term" },
-                  { name: "Rolling_Mean_48h", value: 0.245, pct: "49%", desc: "Two-day moving average demand" },
-                  { name: "Weekend_Indicator_Flag", value: 0.180, pct: "36%", desc: "Industrial vs residential shift" },
-                  { name: "Surge_Ratio_Derivative", value: 0.112, pct: "22%", desc: "Normal-state rate derivative" }
-                ]).map((f, fIdx) => (
-                  <div key={fIdx} className="p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800/80">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-zinc-200 font-bold">{f.name}</span>
-                      <span className="text-cyan-300 font-bold">+{f.value}</span>
-                    </div>
-                    <div className="w-full bg-zinc-950 rounded-full h-2 overflow-hidden mb-1">
-                      <div
-                        className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full"
-                        style={{ width: f.pct }}
-                      />
-                    </div>
-                    <div className="text-[10px] text-zinc-500 font-sans">
-                      {f.desc}
+              {/* Network Topology & Visual Feature Attribution Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                {/* Left 6 cols: Visual Topology Graphic */}
+                <div className="lg:col-span-5 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 flex flex-col justify-between">
+                  <div className="relative group">
+                    <img
+                      src="/assets/images/smart_grid_xai.jpg"
+                      alt="Cyber-Physical Energy Grid Topology & TreeSHAP"
+                      className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent flex items-end p-3">
+                      <span className="text-[10px] font-mono text-cyan-300 bg-zinc-900/90 px-2 py-0.5 rounded border border-zinc-700">
+                        6G Cyber-Physical Grid Command Topology
+                      </span>
                     </div>
                   </div>
-                ))}
+                  <div className="p-3 text-[11px] font-mono text-zinc-400 border-t border-zinc-800/80 bg-zinc-900/40">
+                    Temporal TreeSHAP isolates non-linear interactions across 168-hour demand surges without chronological data leakage.
+                  </div>
+                </div>
+
+                {/* Right 7 cols: Interactive Bar Chart */}
+                <div className="lg:col-span-7 space-y-3 font-mono text-xs">
+                  <div className="flex items-center justify-between">
+                    <span className="text-zinc-400 block text-[11px] uppercase tracking-wider">
+                      Feature Attributions (|SHAP Value|):
+                    </span>
+                    <span className="text-[10px] text-zinc-500 font-mono">
+                      Window: {shapRegime === 'peak' ? 'Peak Stress (168h)' : 'Chronological Baseline'}
+                    </span>
+                  </div>
+
+                  {(shapRegime === 'peak' ? [
+                    { name: "Lag_24h_Grid_Load", value: 0.442, pct: "88%", desc: "Previous day baseline demand" },
+                    { name: "Surge_Ratio_Derivative", value: 0.321, pct: "64%", desc: "Sudden rate of consumption spike" },
+                    { name: "Cyclic_Sin_Hour_Encoding", value: 0.235, pct: "47%", desc: "Circadian grid load periodicity" },
+                    { name: "Rolling_Std_12h", value: 0.168, pct: "34%", desc: "Variance during stress window" },
+                    { name: "Temperature_Gradient", value: 0.098, pct: "20%", desc: "Cooling & heating correlation" }
+                  ] : [
+                    { name: "Cyclic_Sin_Hour_Encoding", value: 0.395, pct: "79%", desc: "Diurnal cyclical demand pattern" },
+                    { name: "Lag_24h_Grid_Load", value: 0.362, pct: "72%", desc: "24-hour autoregressive term" },
+                    { name: "Rolling_Mean_48h", value: 0.245, pct: "49%", desc: "Two-day moving average demand" },
+                    { name: "Weekend_Indicator_Flag", value: 0.180, pct: "36%", desc: "Industrial vs residential shift" },
+                    { name: "Surge_Ratio_Derivative", value: 0.112, pct: "22%", desc: "Normal-state rate derivative" }
+                  ]).map((f, fIdx) => (
+                    <div key={fIdx} className="p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800/80">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-zinc-200 font-bold">{f.name}</span>
+                        <span className="text-cyan-300 font-bold">+{f.value}</span>
+                      </div>
+                      <div className="w-full bg-zinc-950 rounded-full h-2 overflow-hidden mb-1">
+                        <div
+                          className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-2 rounded-full"
+                          style={{ width: f.pct }}
+                        />
+                      </div>
+                      <div className="text-[10px] text-zinc-500 font-sans">
+                        {f.desc}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
               </div>
 
               {/* Performance Metrics */}
@@ -509,6 +567,24 @@ export default function InteractiveLab() {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   MQTT Stream Active
                 </span>
+              </div>
+
+              {/* Visual Telemetry Dashboard Banner */}
+              <div className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 relative group">
+                <img
+                  src="/assets/images/varaha_iot_telemetry.jpg"
+                  alt="Varaha Industrial IoT Telemetry Dashboard"
+                  className="w-full h-56 sm:h-64 object-cover object-center group-hover:scale-102 transition-transform duration-500 opacity-75 group-hover:opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent flex items-end justify-between p-4">
+                  <div className="font-mono text-xs">
+                    <span className="text-white font-bold block">Industrial 3-Phase Telemetry Dashboard</span>
+                    <span className="text-zinc-400 text-[11px]">Real-Time Vibration, Temperature & Capacity Ingestion</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/90 border border-emerald-800 px-2 py-0.5 rounded">
+                    Broker: 10.0.1.50 • 12.5k pkts/sec
+                  </span>
+                </div>
               </div>
 
               {/* Live Gauges */}
