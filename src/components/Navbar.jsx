@@ -17,10 +17,11 @@ export default function Navbar({ onOpenResume }) {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Interactive Lab', href: '#demo-lab', badge: 'Live' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Research', href: '#research' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -47,14 +48,19 @@ export default function Navbar({ onOpenResume }) {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium text-zinc-400 hover:text-white transition-colors"
+                className="text-xs font-medium text-zinc-400 hover:text-white transition-colors inline-flex items-center gap-1.5"
               >
-                {link.name}
+                <span>{link.name}</span>
+                {link.badge && (
+                  <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-cyan-950/80 border border-cyan-800 text-cyan-400">
+                    {link.badge}
+                  </span>
+                )}
               </a>
             ))}
           </nav>
