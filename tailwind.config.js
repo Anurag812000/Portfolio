@@ -1,4 +1,4 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -6,21 +6,20 @@ export default {
   ],
   theme: {
     extend: {
-      keyframes: {
-        blob: {
-          '0%': { transform: 'scale(1)' },
-          '33%': { transform: 'scale(1.2)' },
-          '66%': { transform: 'scale(0.8)' },
-          '100%': { transform: 'scale(1)' },
+      colors: {
+        dark: {
+          950: '#07090e',
+          900: '#0B0F19',
+          850: '#0f172a',
+          800: '#111827',
+          700: '#1F2937',
         },
       },
-      animation: {
-        blob: 'blob 10s infinite',
-      },
-      backgroundImage: {
-        'skills-gradient': 'linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%)',
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}

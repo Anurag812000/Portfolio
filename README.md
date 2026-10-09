@@ -1,59 +1,60 @@
-# 🌐 Animated Portfolio Website
+# Anurag Kumar Sahu - AI & Systems Engineer Portfolio
 
-A sleek, responsive, and fully customizable **animated portfolio website** built using **React.js** and **Tailwind CSS**. This project gained **27K+ views** on [YouTube]([https://youtube.com/your-video-link](https://youtu.be/ypSc8HEurGQ?si=yI3GJCye3sAKoemW)) – loved by developers and students for its modern design and clean code.
+Modern, high-performance personal portfolio website for **Anurag Kumar Sahu** (GATE-qualified Computer Science Engineer & M.Tech Scholar at IIIT Naya Raipur).
 
-## 🚀 Live Demo
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live_Website-06b6d4?style=for-the-badge&logo=vercel)](https://portfolio-gamma-ten-87pg8w3va1.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Anurag_Kumar_Sahu-0077b5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/anuragkumarsahu1)
+[![GitHub](https://img.shields.io/badge/GitHub-Anurag812000-181717?style=for-the-badge&logo=github)](https://github.com/Anurag812000)
 
-🔗 [View Portfolio Live](https://tarunkaushik.vercel.app/)
+---
+
+## 🚀 Key Highlights & Sections
+
+- **Hero & Dynamic Typewriter**: Real-time rotating specializations with live model telemetry.
+- **GATE & Academic Metrics**: Highlighting GATE CSE qualification, IIIT Naya Raipur M.Tech (CGPA 7.8/10) & B.Tech Data Science (CGPA 8.0/10).
+- **Interactive Skills Matrix**: Real-time search & categorized competencies across AI & GenAI, Computer Vision, Backend/IoT, Core CS, and Data Science.
+- **Experience Timeline**:
+  - **Janyu Tech** (*Robotic Programmer Intern*): YOLOv8 instance segmentation pipeline (0.84 mAP50 detection, 0.81 mAP50 segmentation, 1,368 polygon annotations) & Varaha MQTT Telemetry Dashboard.
+  - **DevTown** (*Machine Learning Intern*): CNN potato plant disease detection & FastAPI microservice deployment.
+- **Featured Projects**:
+  - **Intelligent Document Q&A & AI Agent**: Full RAG architecture with Qdrant Vector DB, LangChain, embeddings, tool-calling agents, and citation attribution. Includes interactive modal pipeline flow.
+  - **Varaha IoT Industrial Monitoring Platform**: MQTT, PostgreSQL, React, TypeScript.
+  - **YOLOv8 Robotic Vision Pipeline**: Custom-annotated instance segmentation.
+- **Scientific Research**:
+  - *Explainable XGBoost-Based Smart Grid Load Forecasting for 6G-Enabled Cyber-Physical Systems* (MAE = 1.04, RMSE = 1.39, R² = 0.836, Temporal TreeSHAP).
+  - *Lightweight Multivariate Predictive Auto-Scaling for Energy-Efficient Cloud Data Centers* (MAPE-K, NASA HTTP request data, R² = 0.8400, F1 = 0.9955).
+- **Interactive AI Assistant**: Embedded terminal assistant answering questions directly from the resume knowledge base.
+- **Verified Resume Modal**: Digital resume viewer matching PDF formatting with print & save support.
+- **Direct Contact & Mailer**: Fast clipboard email copy, social links, and message dispatch.
+
+---
 
 ## 🛠️ Tech Stack
 
-- ⚛️ React.js
-- 🎨 Tailwind CSS
-- 💾 Vercel(for deployment)
+- **Frontend**: React 19, Tailwind CSS (v3.4), PostCSS, Autoprefixer
+- **Icons & Typography**: Lucide React, Google Fonts (*Outfit*, *Inter*, *JetBrains Mono*)
+- **Tooling**: Vite 7, ESLint 9
 
-## 📁 Features
+---
 
-- Responsive design for all screen sizes 📱💻
-- Smooth scroll and animation effects ✨
-- Clean and modular React components 🧩
-- Easy to customize with Tailwind utility classes 🎯
-- Professional sections: About, Skills, Projects, Contact, etc. 👨‍💻
-
-
-## 🧑‍💻 How to Use
-
-### 1. Clone the Repo
+## 💻 Local Development
 
 ```bash
-git clone [https://github.com/codingmastr/Tarun-s-Portfolio.git]
-cd your-repo-name
-````
+# 1. Clone repository
+git clone https://github.com/Anurag812000/Portfolio.git
 
-### 2. Install Dependencies
-
-```bash
+# 2. Install dependencies
 npm install
-```
 
-### 3. Run the App
+# 3. Start development server
+npm run dev
 
-```bash
-npm start
-```
-
-### 4. Build for Production
-
-```bash
+# 4. Build for production
 npm run build
 ```
 
-## 📹 YouTube Tutorial
+---
 
-Watch the full build on YouTube:
-📺 [React Portfolio Website - 27K+ Views](https://youtu.be/ypSc8HEurGQ?si=winjJhc9qzNrCqLD)
+## 📄 License
 
-## 🌟 Credits
-
-This project was created with ❤️ by [Tarun Kaushik](https://tarunkaushik.vercel.app/).
-If you like it, feel free to ⭐ this repository and share!
+Created by **Anurag Kumar Sahu**. All rights reserved.
